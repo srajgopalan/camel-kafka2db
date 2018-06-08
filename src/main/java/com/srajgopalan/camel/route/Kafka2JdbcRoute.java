@@ -17,7 +17,9 @@ public class Kafka2JdbcRoute extends RouteBuilder {
                 .process(new SimpleJDBCInsertProcessor())
                 .to("jdbc:myDataSource")
                 .to("sql:select * from kafka_messages?dataSource=myDataSource")
-                .to("log:?level=INFO&showBody=true")
-                .to("direct:jdbcOutput");
+                .to("log:?level=INFO&showBody=true");
+        //        .to("direct:jdbcOutput");
+        //uncomment the direct compponent only for testing, otherwise will throw an error
+        //if used for the running app
     }
 }
