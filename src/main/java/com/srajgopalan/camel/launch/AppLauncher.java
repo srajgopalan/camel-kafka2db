@@ -19,7 +19,7 @@ public class AppLauncher {
 
         main.addRouteBuilder(new Kafka2JdbcRoute());
 
-        System.out.println("Starting Camel JMS to DB Route.");
+        System.out.println("Starting Camel Kafka to DB Route.");
 
         main.run();
     }
